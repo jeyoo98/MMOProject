@@ -12,11 +12,13 @@ import static org.lwjgl.system.MemoryStack.*;
 public class Mesh {
 
     private int vertArrObj;
-    private int vertBufObj;
     private int indexBufObj;
+    private int verticeCount;
 
     public Mesh(float[] interleavedVertices, byte[] indices) {
         stackPush();
+
+        verticeCount = indices.length;
 
         FloatBuffer verticesBuffer = stackMallocFloat(interleavedVertices.length);
         ByteBuffer indicesBuffer = stackMalloc(indices.length);
@@ -30,7 +32,7 @@ public class Mesh {
         vertArrObj = glGenVertexArrays();
         glBindVertexArray(vertArrObj);
 
-        vertBufObj = glGenBuffers();
+        int vertBufObj = glGenBuffers();
         glBindBuffer(GL_ARRAY_BUFFER, vertBufObj);
         glBufferData(GL_ARRAY_BUFFER, verticesBuffer, GL_STATIC_DRAW);
         // Stride: 5 floats per vertice, 4 bytes per float = 20 bytes stride
@@ -48,6 +50,10 @@ public class Mesh {
         glBindVertexArray(0);
 
         stackPop();
+    }
+
+    public int getVerticeCount() {
+        return verticeCount;
     }
 
     public void bind() {

@@ -28,7 +28,7 @@ public class Window {
     private int width;
     private int height;
 
-    private Mesh meshYou;
+    private Character watanabeYou;
 
     private GLFWKeyCallback keyCallback;
 
@@ -66,14 +66,6 @@ public class Window {
     }
 
     private void test() {
-        Texture chibiWatanabeYou = new Texture("./res/You_Chibi.png");
-        // Texture chibiHanamaru = new Texture("./res/Hanamaru_Chibi.png");
-        chibiWatanabeYou.bind();
-        // chibiHanamaru.bind();
-
-        int shaderProgram = ShaderLoader.createShaderProgram("res/shaders/basic.vert", "res/shaders/basic.frag");
-        glUseProgram(shaderProgram);
-
         float[] vertices = {
                 +0.00f, +0.00f, 0.0f, 0.0f, 0.0f, // Bottom left
                 +0.20f, +0.00f, 0.0f, 1.0f, 0.0f, // Bottom right
@@ -86,7 +78,8 @@ public class Window {
                 0, 2, 3
         };
 
-        meshYou = new Mesh(vertices, indices);
+
+        watanabeYou = new Character("./res/You_Chibi.png", "res/shaders/basic.vert", "res/shaders/basic.frag", vertices, indices);
     }
 
     private void loop() {
@@ -116,9 +109,7 @@ public class Window {
         glClearColor(0.0f, 0.5f, 0.0f, 0.0f); // Set state
         glClear(GL_COLOR_BUFFER_BIT); // Perform action based on state (above)
 
-        meshYou.bind();
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_BYTE, 0);
-        meshYou.unbind();
+        watanabeYou.draw();
 
         glfwSwapBuffers(win);
     }
