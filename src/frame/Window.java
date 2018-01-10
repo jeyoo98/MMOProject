@@ -39,7 +39,7 @@ public class Window {
     }
 
     private void init() {
-        // 16:9
+        // 16:9 Aspect ratio
         width = 1280;
         height = 720;
         keyCallback = new KeyboardHandler();

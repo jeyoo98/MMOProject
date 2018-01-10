@@ -32,13 +32,19 @@ public class Character {
         unbind();
     }
 
-    public void bind() {
+    public void move(float deltaX, float deltaY, float deltaZ) {
+        position.x += deltaX;
+        position.y += deltaY;
+        position.z += deltaZ;
+    }
+
+    private void bind() {
         glUseProgram(shaderProgram);
         texture.bind();
         mesh.bind();
     }
 
-    public void unbind() {
+    private void unbind() {
         glUseProgram(0);
         texture.unbind();
         mesh.unbind();
