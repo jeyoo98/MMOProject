@@ -1,5 +1,6 @@
 package frame;
 
+import graphics.Mesh;
 import resourceHandlers.ShaderLoader;
 import resourceHandlers.Texture;
 import input.KeyboardHandler;
@@ -27,7 +28,7 @@ public class Window {
     private int width;
     private int height;
 
-    private int vaoYou, ibo;
+    private Mesh meshYou;
 
     private GLFWKeyCallback keyCallback;
 
@@ -38,6 +39,7 @@ public class Window {
     }
 
     private void init() {
+        // 16:9
         width = 1280;
         height = 720;
         keyCallback = new KeyboardHandler();
@@ -69,13 +71,8 @@ public class Window {
         chibiWatanabeYou.bind();
         // chibiHanamaru.bind();
 
-        stackPush();
-
         int shaderProgram = ShaderLoader.createShaderProgram("res/shaders/basic.vert", "res/shaders/basic.frag");
         glUseProgram(shaderProgram);
-
-        FloatBuffer verticesBuffer = stackMallocFloat(4 * 5);
-        ByteBuffer indicesBuffer = stackMalloc(2 * 3);
 
         float[] vertices = {
                 +0.00f, +0.00f, 0.0f, 0.0f, 0.0f, // Bottom left
@@ -89,35 +86,7 @@ public class Window {
                 0, 2, 3
         };
 
-        verticesBuffer.put(vertices);
-        verticesBuffer.flip();
-
-        indicesBuffer.put(indices);
-        indicesBuffer.flip();
-
-        int vertArrObj = glGenVertexArrays();
-        glBindVertexArray(vertArrObj);
-
-        int vertBufObj = glGenBuffers();
-        glBindBuffer(GL_ARRAY_BUFFER, vertBufObj);
-        glBufferData(GL_ARRAY_BUFFER, verticesBuffer, GL_STATIC_DRAW);
-        glVertexAttribPointer(0, 3, GL_FLOAT, false, 5 * 4, 0);
-        glVertexAttribPointer(1, 2, GL_FLOAT, false, 5 * 4, 3 * 4);
-        glEnableVertexAttribArray(0);
-        glEnableVertexAttribArray(1);
-
-        int indexBufObj = glGenBuffers();
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufObj);
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, indicesBuffer, GL_STATIC_DRAW);
-
-        glBindBuffer(GL_ARRAY_BUFFER, 0);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-        glBindVertexArray(0);
-
-        vaoYou = vertArrObj;
-        ibo = indexBufObj;
-
-        stackPop();
+        meshYou = new Mesh(vertices, indices);
     }
 
     private void loop() {
@@ -147,11 +116,9 @@ public class Window {
         glClearColor(0.0f, 0.5f, 0.0f, 0.0f); // Set state
         glClear(GL_COLOR_BUFFER_BIT); // Perform action based on state (above)
 
-        glBindVertexArray(vaoYou);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+        meshYou.bind();
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_BYTE, 0);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-        glBindVertexArray(0);
+        meshYou.unbind();
 
         glfwSwapBuffers(win);
     }
