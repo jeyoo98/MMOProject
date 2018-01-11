@@ -18,7 +18,9 @@ public class Character {
     private Texture texture;
     private int shaderProgram;
     private Mesh mesh;
+
     private Vector3f position;
+    private float rotation;
 
     private Matrix4f model;
     private Matrix4f view;
@@ -34,10 +36,10 @@ public class Character {
         width = (float) texture.getWidth();
 
         float[] vertices = {
-                +0.00f, +0.00f, 0.0f, 0.0f, 0.0f, // Bottom left
-                 width, +0.00f, 0.0f, 1.0f, 0.0f, // Bottom right
-                 width, height, 0.0f, 1.0f, 1.0f, // Top right
-                +0.00f, height, 0.0f, 0.0f, 1.0f  // Top left
+                -width / 2.0f, -height / 2.0f, 0.0f, 0.0f, 0.0f, // Bottom left
+                 width / 2.0f, -height / 2.0f, 0.0f, 1.0f, 0.0f, // Bottom right
+                 width / 2.0f,  height / 2.0f, 0.0f, 1.0f, 1.0f, // Top right
+                -width / 2.0f,  height / 2.0f, 0.0f, 0.0f, 1.0f  // Top left
         };
 
         byte[] indices = {
@@ -47,7 +49,9 @@ public class Character {
 
         shaderProgram = ShaderLoader.createShaderProgram(vertPath, fragPath);
         mesh = new Mesh(vertices, indices);
+
         position = new Vector3f();
+        rotation = 0.0f;
 
         model = Matrix4f.identity();
         view = Matrix4f.identity();
@@ -71,6 +75,10 @@ public class Character {
         position.z += deltaZ;
     }
 
+    public void rotate(float degrees) {
+        rotation += degrees;
+    }
+
     private void bind() {
         glUseProgram(shaderProgram);
         texture.bind();
@@ -84,7 +92,8 @@ public class Character {
     }
 
     private void setUniformMatrices() {
-        glUniformMatrix4fv(modelUniform, true, Matrix4f.translate(position).multiply(Matrix4f.scale(0.03f, 0.03f, 0.03f)).matrix);
+        model = Matrix4f.translate(position).multiply(Matrix4f.rotateAboutZ(rotation).multiply(Matrix4f.scale(0.03f, 0.03f, 0.03f)));
+        glUniformMatrix4fv(modelUniform, true, model.matrix);
         glUniformMatrix4fv(viewUniform, true, view.matrix);
         glUniformMatrix4fv(projUniform, true, proj.matrix);
     }

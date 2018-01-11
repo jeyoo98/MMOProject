@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcdafc0d-b686-4cc2-9822-ae74e8132b19" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/lwjgl.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MMOProject/frame/Window.class" afterPath="$PROJECT_DIR$/out/production/MMOProject/frame/Window.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shaders/basic.vert" afterPath="$PROJECT_DIR$/res/shaders/basic.vert" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frame/Character.java" afterPath="$PROJECT_DIR$/src/frame/Character.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frame/Window.java" afterPath="$PROJECT_DIR$/src/frame/Window.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/math/Matrix4f.java" afterPath="$PROJECT_DIR$/src/math/Matrix4f.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resourceHandlers/Texture.java" afterPath="$PROJECT_DIR$/src/resourceHandlers/Texture.java" />
     </list>
     <ignored path="MMOProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,28 +34,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Window.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Window.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/frame/Window.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#loop#0;class#Window#0" expanded="false" />
-                <element signature="method#update#0;class#Window#0" expanded="false" />
                 <element signature="method#terminate#0;class#Window#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Character.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Character.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/frame/Character.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+            <state relative-caret-position="300">
+              <caret line="33" column="43" lean-forward="true" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2211#2212#0" expanded="true" />
+                <element signature="e#2246#2247#0" expanded="true" />
                 <element signature="method#bind#0;class#Character#0" expanded="false" />
                 <element signature="method#unbind#0;class#Character#0" expanded="false" />
               </folding>
@@ -165,8 +160,8 @@
         <option value="$PROJECT_DIR$/res/shaders/basic.vert" />
         <option value="$PROJECT_DIR$/src/math/Matrix4f.java" />
         <option value="$PROJECT_DIR$/res/shaders/basic.frag" />
-        <option value="$PROJECT_DIR$/src/frame/Character.java" />
         <option value="$PROJECT_DIR$/src/frame/Window.java" />
+        <option value="$PROJECT_DIR$/src/frame/Character.java" />
       </list>
     </option>
   </component>
@@ -605,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515624047933</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added Model, View, Projection matrices to basic.vert&#10;Character class improved&#10;- Can move watanabeYou around&#10;- Rendered according to image size">
+      <created>1515675963882</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1515675963882</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -618,9 +620,9 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32873806" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32873806" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32873806" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -656,7 +658,8 @@
     <MESSAGE value="Abstracted Vertex Array Objects into Mesh class" />
     <MESSAGE value="Abstracted into Character class&#10;- Contains Mesh, Texture, Position, Shader program&#10;Created Matrix4f&#10;- identity, can translate/scale/rotate&#10;- multiple and toString&#10;Created Vector 3f" />
     <MESSAGE value="Edited comments&#10;Added rudimentary move() for Character class&#10;- Does not yet work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited comments&#10;Added rudimentary move() for Character class&#10;- Does not yet work" />
+    <MESSAGE value="Added Model, View, Projection matrices to basic.vert&#10;Character class improved&#10;- Can move watanabeYou around&#10;- Rendered according to image size" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Model, View, Projection matrices to basic.vert&#10;Character class improved&#10;- Can move watanabeYou around&#10;- Rendered according to image size" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -682,9 +685,7 @@
         <state relative-caret-position="51">
           <caret line="3" column="37" lean-forward="false" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#loop#0;class#Window#0" expanded="false" />
-            <element signature="method#update#0;class#Window#0" expanded="false" />
             <element signature="method#terminate#0;class#Window#0" expanded="false" />
           </folding>
         </state>
@@ -696,6 +697,8 @@
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2211#2212#0" expanded="true" />
+            <element signature="e#2246#2247#0" expanded="true" />
             <element signature="method#bind#0;class#Character#0" expanded="false" />
             <element signature="method#unbind#0;class#Character#0" expanded="false" />
           </folding>
@@ -755,9 +758,7 @@
         <state relative-caret-position="51">
           <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#loop#0;class#Window#0" expanded="false" />
-            <element signature="method#update#0;class#Window#0" expanded="false" />
             <element signature="method#terminate#0;class#Window#0" expanded="false" />
           </folding>
         </state>
@@ -769,6 +770,8 @@
           <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2211#2212#0" expanded="true" />
+            <element signature="e#2246#2247#0" expanded="true" />
             <element signature="method#bind#0;class#Character#0" expanded="false" />
             <element signature="method#unbind#0;class#Character#0" expanded="false" />
           </folding>
@@ -836,9 +839,7 @@
         <state relative-caret-position="289">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#loop#0;class#Window#0" expanded="false" />
-            <element signature="method#update#0;class#Window#0" expanded="false" />
             <element signature="method#terminate#0;class#Window#0" expanded="false" />
           </folding>
         </state>
@@ -917,27 +918,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/frame/Character.java">
+    <entry file="file://$PROJECT_DIR$/src/frame/Window.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#bind#0;class#Character#0" expanded="false" />
-            <element signature="method#unbind#0;class#Character#0" expanded="false" />
+            <element signature="method#loop#0;class#Window#0" expanded="false" />
+            <element signature="method#terminate#0;class#Window#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/frame/Window.java">
+    <entry file="file://$PROJECT_DIR$/src/frame/Character.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="33" column="43" lean-forward="true" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#loop#0;class#Window#0" expanded="false" />
-            <element signature="method#update#0;class#Window#0" expanded="false" />
-            <element signature="method#terminate#0;class#Window#0" expanded="false" />
+            <element signature="e#2211#2212#0" expanded="true" />
+            <element signature="e#2246#2247#0" expanded="true" />
+            <element signature="method#bind#0;class#Character#0" expanded="false" />
+            <element signature="method#unbind#0;class#Character#0" expanded="false" />
           </folding>
         </state>
       </provider>

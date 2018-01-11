@@ -1,8 +1,5 @@
 package frame;
 
-import graphics.Mesh;
-import resourceHandlers.ShaderLoader;
-import resourceHandlers.Texture;
 import input.KeyboardHandler;
 
 import org.lwjgl.opengl.*;
@@ -11,15 +8,8 @@ import org.lwjgl.glfw.Callbacks;
 import org.lwjgl.glfw.GLFWKeyCallback;
 import org.lwjgl.glfw.GLFWVidMode;
 
-import java.nio.ByteBuffer;
-import java.nio.FloatBuffer;
-
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL15.*;
-import static org.lwjgl.opengl.GL20.*;
-import static org.lwjgl.opengl.GL30.*;
-import static org.lwjgl.system.MemoryStack.*;
 
 public class Window {
 
@@ -106,6 +96,14 @@ public class Window {
 
         if (KeyboardHandler.isKeyDown(GLFW_KEY_D)) {
             watanabeYou.move(0.1f, 0.0f, 0.0f);
+        }
+
+        if (KeyboardHandler.isKeyDown(GLFW_KEY_Q)) {
+            watanabeYou.rotate(-5.0f);
+        }
+
+        if (KeyboardHandler.isKeyDown(GLFW_KEY_E)) {
+            watanabeYou.rotate(5.0f);
         }
     }
 
