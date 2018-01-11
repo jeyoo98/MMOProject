@@ -18,7 +18,7 @@ public class Window {
     private int width;
     private int height;
 
-    private Character watanabeYou;
+    private MainCharacter watanabeYou;
     private Character zuramaru;
 
     private GLFWKeyCallback keyCallback;
@@ -58,7 +58,7 @@ public class Window {
     }
 
     private void test() {
-        watanabeYou = new Character("./res/You_Chibi.png", "res/shaders/basic.vert", "res/shaders/basic.frag");
+        watanabeYou = new MainCharacter("./res/You_Chibi.png", "res/shaders/basic.vert", "res/shaders/basic.frag");
         zuramaru = new Character("./res/Hanamaru_Chibi.png", "res/shaders/basic.vert", "res/shaders/basic.frag");
     }
 
@@ -74,36 +74,14 @@ public class Window {
         // Calls the invoke method of keyCallback (if any keys were pressed)
         glfwPollEvents();
 
+        watanabeYou.update();
+
         if (KeyboardHandler.isKeyDown(GLFW_KEY_SPACE)) {
             System.out.println("Space");
         }
 
         if (KeyboardHandler.isKeyDown(GLFW_KEY_ESCAPE)) {
             glfwSetWindowShouldClose(win, true);
-        }
-
-        if (KeyboardHandler.isKeyDown(GLFW_KEY_W)) {
-            watanabeYou.move(0.0f, 0.1f, 0.0f);
-        }
-
-        if (KeyboardHandler.isKeyDown(GLFW_KEY_A)) {
-            watanabeYou.move(-0.1f, 0.0f, 0.0f);
-        }
-
-        if (KeyboardHandler.isKeyDown(GLFW_KEY_S)) {
-            watanabeYou.move(0.0f, -0.1f, 0.0f);
-        }
-
-        if (KeyboardHandler.isKeyDown(GLFW_KEY_D)) {
-            watanabeYou.move(0.1f, 0.0f, 0.0f);
-        }
-
-        if (KeyboardHandler.isKeyDown(GLFW_KEY_Q)) {
-            watanabeYou.rotate(-5.0f);
-        }
-
-        if (KeyboardHandler.isKeyDown(GLFW_KEY_E)) {
-            watanabeYou.rotate(5.0f);
         }
     }
 
