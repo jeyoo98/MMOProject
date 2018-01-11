@@ -29,6 +29,7 @@ public class Window {
     private int height;
 
     private Character watanabeYou;
+    private Character zuramaru;
 
     private GLFWKeyCallback keyCallback;
 
@@ -62,24 +63,13 @@ public class Window {
         glfwSwapInterval(1); // Enable V-sync
         GL.createCapabilities();
         glEnable(GL_TEXTURE_2D);
+        glClearColor(0.0f, 0.5f, 0.0f, 0.0f);
         glfwShowWindow(win);
     }
 
     private void test() {
-        float[] vertices = {
-                +0.00f, +0.00f, 0.0f, 0.0f, 0.0f, // Bottom left
-                +0.20f, +0.00f, 0.0f, 1.0f, 0.0f, // Bottom right
-                +0.20f, +0.40f, 0.0f, 1.0f, 1.0f, // Top right
-                +0.00f, +0.40f, 0.0f, 0.0f, 1.0f  // Top left
-        };
-
-        byte[] indices = {
-                0, 1, 2,
-                0, 2, 3
-        };
-
-
-        watanabeYou = new Character("./res/You_Chibi.png", "res/shaders/basic.vert", "res/shaders/basic.frag", vertices, indices);
+        watanabeYou = new Character("./res/You_Chibi.png", "res/shaders/basic.vert", "res/shaders/basic.frag");
+        zuramaru = new Character("./res/Hanamaru_Chibi.png", "res/shaders/basic.vert", "res/shaders/basic.frag");
     }
 
     private void loop() {
@@ -101,15 +91,29 @@ public class Window {
         if (KeyboardHandler.isKeyDown(GLFW_KEY_ESCAPE)) {
             glfwSetWindowShouldClose(win, true);
         }
+
+        if (KeyboardHandler.isKeyDown(GLFW_KEY_W)) {
+            watanabeYou.move(0.0f, 0.1f, 0.0f);
+        }
+
+        if (KeyboardHandler.isKeyDown(GLFW_KEY_A)) {
+            watanabeYou.move(-0.1f, 0.0f, 0.0f);
+        }
+
+        if (KeyboardHandler.isKeyDown(GLFW_KEY_S)) {
+            watanabeYou.move(0.0f, -0.1f, 0.0f);
+        }
+
+        if (KeyboardHandler.isKeyDown(GLFW_KEY_D)) {
+            watanabeYou.move(0.1f, 0.0f, 0.0f);
+        }
     }
 
     private void render() {
-        // Background colour
-        // Sets all pixels to specified colour
-        glClearColor(0.0f, 0.5f, 0.0f, 0.0f); // Set state
-        glClear(GL_COLOR_BUFFER_BIT); // Perform action based on state (above)
+        glClear(GL_COLOR_BUFFER_BIT);
 
         watanabeYou.draw();
+        zuramaru.draw();
 
         glfwSwapBuffers(win);
     }

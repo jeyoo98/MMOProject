@@ -8,7 +8,7 @@ package math;
 
 public class Matrix4f {
 
-    private float[] matrix = new float[16];
+    public float[] matrix = new float[16];
 
     public Matrix4f() {
         for (int row = 0; row < 4; row++) {
@@ -28,13 +28,28 @@ public class Matrix4f {
     }
 
     public static Matrix4f identity() {
-        Matrix4f retMat = new Matrix4f();
+        Matrix4f result = new Matrix4f();
 
         for (int i = 0; i < 4; i++) {
-            retMat.setVal(i, i, 1.0f);
+            result.setVal(i, i, 1.0f);
         }
 
-        return retMat;
+        return result;
+    }
+
+    public static Matrix4f orthographic(float left, float right, float top, float bottom, float near, float far) {
+        Matrix4f result = Matrix4f.identity();
+
+        result.setVal(0, 0, 2.0f / (right - left));
+        result.setVal(1, 1, 2.0f / (top - bottom));
+        result.setVal(2, 2, 2.0f / (near - far));
+
+        result.setVal(0, 3, (left + right) / (left - right));
+        result.setVal(1, 3, (bottom + top) / (bottom - top));
+        result.setVal(2, 3, (far + near) / (far - near));
+
+
+        return result;
     }
 
     public static Matrix4f translate(Vector3f vector) {
